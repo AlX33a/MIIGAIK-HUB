@@ -1,0 +1,47 @@
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXIST 'Крым';
+DROP TABLE IF EXIST 'Органы власти';
+DROP TABLE IF EXIST 'Органы государственной власти';
+DROP TABLE IF EXIST 'Органы местного самоуправления';
+DROP TABLE IF EXIST 'Администрации муниципальных образований и иные органы';
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE 'Крым' (
+	'Код' INTEGER(2) NOT NULL,
+	'Площадь' INTEGER NOT NULL,
+	'Районы' TEXT NOT NULL,
+	PRIMARY KEY ('Код')
+);
+
+CREATE TABLE 'Органы власти' (
+	'Код' INTEGER(11) NOT NULL,
+	'Наименование' TEXT NOT NULL,
+	PRIMARY KEY ('Код')
+);
+
+CREATE TABLE 'Органы государственной власти' (
+	'Наименование' TEXT NOT NULL,
+	'Фактический адрес' TEXT NOT NULL,
+	'Юридический адрес' TEXT NOT NULL,
+	'Руководитель' TEXT NOT NULL,
+	'Телефон' TEXT NOT NULL,
+	'Электронная почта' TEXT NOT NULL,
+	'Сайты' TEXT NOT NULL,
+	PRIMARY KEY ('Наименование')
+);
+
+CREATE TABLE 'Органы местного самоуправления' (
+	'Наименование' TEXT NOT NULL,
+	'Фактический адрес' TEXT NOT NULL,
+	'Руководитель' TEXT NOT NULL,
+	'Телефон' TEXT NOT NULL,
+	'Электронная почта' TEXT NOT NULL,
+	PRIMARY KEY ('Наименование')
+);
+
+CREATE TABLE 'Администрации муниципальных образований и иные органы' (
+	'Наименование' TEXT NOT NULL,
+	'Фактический адрес' TEXT NOT NULL,
+	'Режим работы' TEXT NOT NULL,
+	PRIMARY KEY ('Наименование')
+);
